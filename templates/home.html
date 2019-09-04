@@ -1,17 +1,3 @@
-<!--preserveAspectRatio="xMidYMid slice" focusable="false"
-                                role="img" aria-label="Placeholder: Thumbnail"
-<h1>主页</h1>
-
-{% for gallery in gallerys.all  %}
-{{gallery.title}}
-{{gallery.description}}
-<br>
-<img src="{{gallery.image.url}}">
-<br>
-{% endfor %}   
--->
-
-
 <!doctype html>
 <html lang="en">
 
@@ -21,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>安全屋</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -57,16 +43,16 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">About</h4>
-                        <p class="text-muted">Add some information about the album below, the author, or any other
-                            background context. Make it a few sentences long so folks can pick up some informative
-                            tidbits. Then, link them off to some social networking sites or contact information.</p>
+                        <p class="text-muted">我的个人博客网站</p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Contact</h4>
+                        <h4 class="text-white">联系我</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                            <li><a href="#" class="text-white">Like on Facebook</a></li>
-                            <li><a href="#" class="text-white">Email me</a></li>
+                            <li><a href="https://github.com/talking-toaster" target="_blank"
+                                    class="text-white">Github主页</a></li>
+                            <li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=xz.xuezhen@gmail.com"
+                                    target="_blank" class="text-white">邮箱</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -94,13 +80,11 @@
 
         <section class="jumbotron text-center">
             <div class="container">
-                <h1 class="jumbotron-heading">Album example</h1>
-                <p class="lead text-muted">Something short and leading about the collection below—its contents, the
-                    creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
-                    entirely.</p>
+                <h1 class="jumbotron-heading">安全屋</h1>
+                <p class="lead text-muted">Talk is cheap,</p>
                 <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                    <a href="blog/" class="btn btn-primary my-2">我的博客</a>
+
                 </p>
             </div>
         </section>
@@ -110,6 +94,7 @@
 
                 <div class="row">
                     {% for gallery in gallerys.all  %}
+
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
                             <img class="bd-placeholder-img card-img-top" width="100%" height="225"
@@ -119,7 +104,13 @@
                                 dy=".3em">Thumbnail</text>
                             </svg>
                             <div class="card-body">
-                                <p class="card-text">{{gallery.description}}</p>
+
+                                <p class="card-text">
+                                    <a href="{{gallery.id}}">
+                                        {{gallery.description}}
+                                    </a>
+                                </p>
+
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -130,6 +121,7 @@
                             </div>
                         </div>
                     </div>
+
                     {% endfor %}
 
                 </div>
@@ -143,9 +135,7 @@
             <p class="float-right">
                 <a href="#">Back to top</a>
             </p>
-            <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-            <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a
-                    href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
+
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

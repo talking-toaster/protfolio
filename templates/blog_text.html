@@ -51,6 +51,8 @@
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
+
+
         }
     </style>
     <!-- Custom styles for this template -->
@@ -64,7 +66,7 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">About</h4>
-                        <p class="text-muted">博客页面</p>
+                        <p class="text-muted">博文页面</p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Contact</h4>
@@ -103,7 +105,8 @@
                 <h1 class="jumbotron-heading">我的博客</h1>
                 <p class="lead text-muted">Talk is cheap,</p>
                 <p>
-                    <a href="/" class="btn btn-primary my-2">回到主页</a>
+                    <a href=" http://localhost:8000/" class="btn btn-primary my-2">回到博客</a>
+                    <a href="/" class="btn btn-secondary my-2">回到首页</a>
                 </p>
             </div>
         </section>
@@ -111,23 +114,28 @@
         <div class="album py-5 bg-light">
             <div class="container">
 
-                {% for blog in blogs.all %}
-                <br>
-                <a href="{{blog.id}}">
-                    {{blog.title}}
-                </a>
-                <br>
+                <div class="row">
+                    <h2> {{blog.title}}</h2>
+
+                </div>
+
+
+
+                <br> <small class="text-muted"></small>
                 {{blog.date}}
                 <br>
                 <img src="{{blog.image.url}}">
                 <br>
-                <pre>
-                       {{blog.summery}} 
-                    </pre>
                 <br>
+                <br>
+                <h5>
+                    <pre> {{blog.text}}</pre>
 
-                {% endfor %}
+
+                </h5>
+
             </div>
+        </div>
         </div>
 
     </main>
